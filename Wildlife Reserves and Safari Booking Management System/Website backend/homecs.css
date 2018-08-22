@@ -1,0 +1,161 @@
+body {
+    background-image:url(hp2.jpg);
+	/*background-color:#F6E396;*/
+	background-size: cover;
+    background-attachment: fixed;
+	width:400px;
+}
+
+.links
+{
+	float:right;
+	margin-left:80%;
+	margin-top:2.5%;
+	margin-right:15%;
+	position:absolute;
+	
+}
+.header{
+    margin: 30px;
+    /*background-color: #2F4F4F;*/
+    text-align: center;
+    padding: 2px;
+   /* opacity: 0.4;*/
+    background: rgba(255,255,255,1);
+	border-color:#333333;
+	border: solid;
+	width: 1250px;
+	border-radius: 50px;
+}
+.header p{
+    margin: 5%;
+    font-weight: bold;
+    color: #ffbf00;
+}
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 33%;
+  margin-bottom:50px;
+  margin-left:100px;
+  max-height: 1500px;
+  position: relative;
+  margin:0px auto;
+}
+
+.mySlides {
+ display: none;
+ width:600px;
+ height:600px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position:absolute;
+  
+  top: 50%;
+  width:30%;
+  margin-top: 100px;
+  margin-left: 0px;
+  margin-right:0px auto;
+  padding: 1.5px;
+  color: #FEA408;
+  font-weight: bold;
+  font-size: 32px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: -888px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #663300;
+  font-size: 20px;
+  font-family: "Arial Black";
+  padding: 8px 12px;
+  position: inherit;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .6} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/*--------------------*/
+.cardrow {
+  width: 100%;
+  height: 100%;
+  padding-left:60px;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+	background-color:#E1DEDA;
+	opacity: 0.86;
+    box-shadow: 0 4px 8px 0 #F6E396;
+    transition: 0.3s;
+	/*width:100%;*/
+	max-width:350px;
+	border-radius: 8px; /* 5px rounded corners */
+	padding:30px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 20px 30px 0 #7C5F2C;
+}
+
+/* Add some padding inside the card container */
+.containtab {
+    padding: 2px 16px;
+}
+
+.leftpane {
+    width: 100%;
+    height: 600px;
+    float: left;
+    border-collapse: collapse;
+}
+
+.middlepane {
+    width: 100%;
+    height: 600px;
+	margin-left:540px;
+    border-collapse: collapse;
+}
+
+.rightpane {
+  width: 100%;
+  height: 600px;
+  /*position: relative;*/
+  margin-left:780px;
+  border-collapse: collapse;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Directions service</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <a href="homework.html" style="text-decoration: none;">
+          <i class="material-icons" style="background-color: #2ACC11; color: #fff; padding: 5px;">home</i>
+      </a>
+    <b>Start: </b>
+    <select id="start">
+      <option value="New Delhi">New Delhi</option>
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Itanagar">Itanagar</option>
+      <option value="Dispur">Dispur</option>
+      <option value="Patna">Patna</option>
+      <option value="Panaji">Panaji</option>
+      <option value="Gandhinagar">Gandhinagar</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Shimla">Shimla</option>
+      <option value="Srinagar">Srinagar</option>
+      <option value="Bengaluru">Bengaluru</option>
+      <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+      <option value="Bhopal">Bhopal</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Imphal">Imphal</option>
+      <option value="Shillong">Shillong</option>
+      <option value="Aizawl">Aizawl</option>
+      <option value="Kohima">Kohima</option>
+      <option value="Bhubaneshwar">Bhubaneshwar</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Jaipur">Jaipur</option>
+      <option value="Gangtok">Gangtok</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Agartala">Agartala</option>
+      <option value="Lucknow">Lucknow</option>
+      <option value="Kolkata">Kolkata</option>
+      <option value="Raipur">Raipur</option>
+      <option value="Dehradun">Dehradun</option>
+      <option value="Ranchi">Ranchi</option>
+      <option value="Pondicherry">Pondicherry</option>
+      <option value="Pune">Pune</option>
+      <option value="Ahmedabad">Ahmedabad</option>
+      <option value="Nagpur">Nagpur</option>
+      <option value="Vishakhapatnam">Vishakhapatnam</option>
+      <option value="Kochi">Kochi</option>
+      <option value="Port Blair">Port Blair</option>
+    </select>
+    <b>End: </b>
+    <select id="end">
+      <option value="Campbell Bay">Campbell Bay National Park</option>
+      <option value="Ferrargunj">Galathea Bay National Park</option>
+      <option value="New Wandoor Beach">Mahatma Gandhi Marine National Park</option>
+      <option value="Rajahmundry, Andhra Pradesh">Papikonda National Park</option>
+      <option value="Bharat Nagar,Chittoor">Sri Venkateswara National Park</option>
+      <option value="Itanagar,Arunachal Pradesh">Mouling National Park</option>
+      <option value="Itanagar,Arunachal Pradesh">Namdapha National Park</option>
+      <option value="Guwahati, Assam">Nameri National Park</option>
+      <option value="Jakhalabandha, Assam">Kaziranga National Park</option>
+      <option value="Pathsala, Assam">Manas Wildlife Sanctuary</option>
+      <option value="Tinsukia Jn, Assam">Dibru-Saikhowa National Park</option>
+      <option value="Valmikinagar Rd, Bihar">Valmiki National Park</option>
+      <option value="Ambikapur, Chhattisgarh">Guru Ghasidas National Park</option>
+      <option value="Jagdalpur, Chhattisgarh">Kanger Valley National Park</option>
+      <option value="Jagdalpur, Chhattisgarh">Indravati(Kutru) National Park</option>
+      <option value="Mollem, Goa">Mollem National Park</option>
+      <option value="Junagadh, Gujarat">Sasan-Gir Wildlife Sanctuary</option>
+      <option value="Jamnagar, Gujarat">Marine(Gulf of Kachchh) National Park</option>
+      <option value="Bardoli, Gujarat">Purna Wildlife Sanctuary</option>
+      <option value="Chandigarh, Punjab">Kalesar National Park</option>
+      <option value="Shimla, Himachal Pradesh">Inderkilla National Park</option>
+      <option value="Shimla, Himachal Pradesh">Great Himalayan National Park</option>
+      <option value="Shimla, Himachal Pradesh">Pin Valley National Park</option>
+      <option value="Shimla, Himachal Pradesh">Khirganga National Park</option>
+      <option value="Srinagar">Dachigam National Park</option>
+      <option value="Srinagar">Kishtwar National Park</option>
+      <option value="Srinagar">Hemis National Park</option>
+      <option value="Daltonganj">Betla National Park</option>
+      <option value="Mysuru, Karnataka">Nagarhole(Rajiv Gandhi) National Park</option>
+      <option value="Mysuru, Karnataka">Bandipur National Park</option>
+      <option value="Hubballi, Karnataka">Anshi National Park</option>
+      <option value="Ernakulam, Kerala">Eravikulum National Park</option>
+      <option value="Coimbatore">Silent Valley National Park</option>
+      <option value="Chhindwara, Madhya Pradesh">Satpura National Park</option>
+      <option value="Nagpur, Maharashtra">Kanha National Park</option>
+      <option value="Jabalpur, Madhya Pradesh">Panna National Park</option>
+      <option value="Katni, Madhya Pradesh">Bandhavgarh National Park</option>
+      <option value="Chhindwara, Madhya Pradesh">Indira Priyadarshani Pench National Park</option>
+      <option value="Sangli">Chandoli National Park</option>
+      <option value="Borivilli">Sanjay Gandhi National Park</option>
+      <option value="Chandrapur, Maharashtra">Tadoba National Park</option>
+      <option value="Jiribam, Manipur">Keibul Lanjao National Park</option>
+      <option value="Shillong">Balpakram National Park</option>
+      <option value="Aizawl">Murlel National Park</option>
+      <option value="Dimapur, Nagaland">Intanki National Park</option>
+      <option value="Baripada, Odisha">Simlipal National Park</option>
+      <option value="Cuttack, Odisha">Bhitarkalika National Park</option>
+      <option value="Jaisalmer, Rajasthan">Desert National Park</option>
+      <option value="Sawai Madhopur">Ranthambore National Park</option>
+      <option value="Kota, Rajasthan">Mukundra Hills National Park</option>
+      <option value="Darjeeling, Sikkim">Khangchendzonga National Park</option>
+      <option value="Pollachi, Tamil Nadu">Indira Gandhi National Park</option>
+      <option value="Ooty, Tamil Nadu">Mukurthi National Park</option>
+      <option value="Ooty, Tamil Nadu">Mudumalai National Park</option>
+      <option value="Hyderabad">Mahaveer Harina Vanasthali</option>
+      <option value="New Maynaguri">Bison(Rajbari)National Park</option>
+      <option value="Bhira Kheri">Dudhawa National Park</option>
+      <option value="Rishikesh">Gangotri National Park</option>
+      <option value="Ramnagar, Uttarakhand">Jim Corbett National Park</option>
+      <option value="Rishikesh">Nanda Devi National Park</option>
+      <option value="Rishikesh">Rajaji National Park</option>
+      <option value="Canning, West Bengal">Sundarban National Park</option>
+      <option value="Hamiltonganj">Buxa National Park</option>
+      <option value="Hamiltonganj">Jaldapara National Park</option>
+      <option value="Darjeeling">Neora Valley National Park</option>
+    </select>
+      <a href="transit.html" style="text-decoration: none;">
+          <i class="material-icons" style="background-color: #26AEF2; color: #fff; padding: 5px;">directions_bus</i>
+      </a>
+      <a href="directions.html" style="text-decoration: none;">
+          <i class="material-icons" style="background-color: #26AEF2; color: #fff; padding: 5px;">directions_car</i>
+      </a>
+    </div>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: 20.5937, lng: 78.9629}
+        });
+        directionsDisplay.setMap(map);
+
+        var onChangeHandler = function() {
+          calculateAndDisplayTransit(directionsService, directionsDisplay);
+        };
+        document.getElementById('start').addEventListener('change', onChangeHandler);
+        document.getElementById('end').addEventListener('change', onChangeHandler);
+      }
+
+      function calculateAndDisplayTransit(directionsService, directionsDisplay) {
+        directionsService.route({
+          origin: document.getElementById('start').value,
+          destination: document.getElementById('end').value,
+          travelMode: 'TRANSIT'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbmoaFeMRUecSM2ehU_hW9NGH1FbwX6bg&callback=initMap">
+    </script>
+  </body>
+</html>

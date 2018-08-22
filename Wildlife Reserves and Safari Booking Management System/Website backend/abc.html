@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Math</h2>
+
+<p>Math.floor(Math.random() * 10) returns a random integer between 0 and 9 (both included).</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<center>
+<font size="10" face="arial">YOUR RANDOM NUMBER IS<br>
+<p id="d"></p>
+</font>
+</center>
+<script>
+	var arr=[];
+	var i;
+	var j;
+for(i=0;i<4;i++){
+
+if(i==0)
+{document.getElementById("demo").innerHTML =
+Math.floor(Math.random() * (999-100+1) + 100);
+arr[0]=document.getElementById("demo").innerHTML;}	
+if(i==1)
+{document.getElementById("demo1").innerHTML =
+Math.floor(Math.random() * (999-100+1) + 100);
+arr[1]=document.getElementById("demo1").innerHTML;}
+if(i==2)
+{document.getElementById("demo2").innerHTML =
+Math.floor(Math.random() * (999-100+1) + 100);
+arr[2]=document.getElementById("demo2").innerHTML;}
+if(i==3)
+{document.getElementById("demo3").innerHTML =
+Math.floor(Math.random() * (999-100+1) + 100);
+arr[3]=document.getElementById("demo3").innerHTML;}
+
+document.getElementById("d").innerHTML= arr;
+}	
+</script>
+
+</body>
+</html>

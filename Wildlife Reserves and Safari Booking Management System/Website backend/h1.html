@@ -1,0 +1,127 @@
+<html>
+<head>
+<link rel="stylesheet" href="homecs.css"/>
+
+<body>
+<div class="header">
+<font face="Arial, Helvetica, sans-serif" color="#F7A204">
+<div class="links" style="float:right;"><a href="basic.html">LOGIN</a>&nbsp&nbsp&nbsp&nbsp<a href="registform.html	">REGISTER</a></div>
+</font>
+<img src="logo1.png" alt="Logo here">  
+</div>
+<br>
+<hr color="#663300" size="4px" width="1350px">
+<br>
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="rbt1.jpg" style="width:170%;height:90%;">
+    <div class="text">THE ROYAL BENGAL TIGER</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="rhino.jpg" style="width:170%;height:90%;">
+    <div class="text">THE INDIAN RHINO</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="sambar.jpg" style="width:170%;height:90%;">
+    <div class="text">THE GREAT INDIAN SAMBAR</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="hornbill.jpg" style="width:170%;height:90%;">
+    <div class="text">THE HORNBILL</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="peacock.jpg" style="width:170%;height:90%;">
+    <div class="text">THE PEACOCK</div>
+  </div>
+
+  <a class="prev" onClick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onClick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+<br>
+<hr color="#663300" width="0px">
+
+<!-- Card code-->
+<br>
+
+
+<div class="cardrow">
+<div class="leftpane">
+<div class="card">
+   <img src="cor.jpg" alt="Park" style="width:100%;height:70%">
+  <div class="containtab">
+    <h2><b><center><a href=""><font face="Arial" color="#977336">Jim Corbett National Park</a></center></b></h2> 
+    <p><center>Click the link above to know more.</font></center></p> 
+  </div>  
+  </div>
+</div>
+<br>
+<br>
+<br>
+<hr color="#663300" width="0px">
+<br>
+<br>
+<br>
+ <div class="rightpane">
+  <div class="card">
+   <img src="kaz.png" alt="Park" style="width:100%;height:70%">
+  <div class="container">
+    <h2><b><center><a href=""><font face="Arial" color="#977336">Kaziranga</a></center></b></h2> 
+    <p><center>Click the link above to know more.</font></center></p> 
+  </div>  
+  </div>
+</div>
+<br>
+<br>
+<br>
+<hr color="#663300" width="1300px">
+<br>
+ <div class="leftpane">
+  <div class="card">
+   <img src="tad.png" alt="Park" style="width:100%;height:70%">
+  <div class="container">
+    <h2><b><center><a href=""><font face="Arial" color="#977336">Tadoba</a></center></b></h2> 
+    <p><center>Click the link above to know more.</font></center></p> 
+  </div>  
+  </div>
+</div>    
+</div>
+<br>
+<hr color="#663300" width="1300px">
+<br>
+<!--SCRIPT-->
+
+<script>
+var slideIndex = 0;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>

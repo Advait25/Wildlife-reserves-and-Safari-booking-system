@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script>
+function validation()
+{
+	var em=document.getElementById('100').value
+	if(em=="")
+	{
+		alert("Enter the email!!");	
+		return false;
+	}
+	else
+		alert("The password has been sent to your email.Please check");
+	
+	
+
+}
+</script>
+</head>
+<body>
+<h1 align="center">FORGOT PASSWORD PAGE</h1>
+<center>
+<form onSubmit="return validation();" action="basic.html">
+ENTER EMAIL ID:
+<input type="text" name="email" id="100" >
+<input type="submit" type="submit" value="SEND MAIL" >
+</form>
+</center>
+</body>
+</html>

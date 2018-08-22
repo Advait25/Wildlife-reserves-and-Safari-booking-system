@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <script>
+function valid()
+{
+	//alert("hii");
+	var fn=document.getElementById('11').value;
+	var ln=document.getElementById('12').value;
+	var em=document.getElementById('13').value;
+	var co=document.getElementById('14').value;
+	//var ro=document.getElementById('17').value;
+	var ca=document.getElementById('18').value;
+	var tc=document.getElementById('19').value;
+	var np=document.getElementById('15').value;
+	var cp=document.getElementById('16').value;
+	if(fn=="" || ln=="" || em=="" || co=="" ||	ca=="" )
+	{
+		alert("ONE OR MORE FIELDS ARE BLANK!!");
+		return false;
+	}
+	if(  np=="" || cp=="" || np!=cp)
+	{
+		alert("ENTER THE PASSWORD FIELDS CORRECTLY");
+		return false;
+	}
+	if(tc.checked==false)
+	{
+		alert("PLEASE AGREE TO THE TERMS AND CONDITIONS");
+		return false;
+	}
+
+}
+</script>
+</head>
+<body>
+	<center>
+<form onsubmit="return valid();" action="basic.html">
+ First Name:<br>
+ <input type="text" name="fname" id="11"><br>
+ Last Name:<br>
+ <input type="text" name="lname" id="12"><br>
+ Email Address:<br>
+ <input type="text" name="email" id="13"><br>
+ Contact:<br>
+ <input type="number" name="contact" min="7000000000" max="9999999999" id="14"><br>
+ Enter Password:<br>
+ <input type="password" name="pass1" id="15"><br>
+ Confirm Password:<br>
+ <input type="password" name="pass2" id="16"><br>
+ <br><br>
+ <input type="checkbox" name="norobot" id="17"><br>I am not a robot.<br>
+ Enter Captcha:<br>
+ <input type="text" name="captcha" id="18"><br>
+ <input type="checkbox" name="tandc" value="check"  id="19"><br>I agree to the <a href="../../../Downloads/tnc.html">Terms and Conditions</a><br>
+ <input name="submit" type="submit" value="SUBMIT" ><br>
+ </form>
+</center>
+</body>
+</html>
